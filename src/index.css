@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-forest: #004B32;
+    --color-dark-green: #003B29;
+    --color-deep-green: #002F20;
+    --color-warm-cream: #FFF5E6;
+    --color-light-cream: #F8EBD8;
+    --color-card-cream: #F9EEDD;
+    --color-coffee-brown: #75401F;
+    --color-text-sub: #4A6053;
+    --color-text-body: #566E61;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #EDE4D7;
+    color: #003B29;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+/* -------------------------------------------------------------------------
+   CSS SCROLL-SNAP SPECIFICATIONS: Exact original 100vh on desktop, fluid on mobile
+   ------------------------------------------------------------------------- */
+@media (min-width: 1024px) {
+  html {
+    scroll-snap-type: y mandatory;
+  }
+
+  .snap-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1023px) {
+  html {
+    scroll-snap-type: none;
+  }
+
+  .snap-section {
+    scroll-snap-align: none;
+    min-height: 100vh;
+    height: auto;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  #home.snap-section {
+    height: 100svh;
+    min-height: 540px;
+    max-height: 100svh;
+    overflow: hidden;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #004B32;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #003B29;
+}
